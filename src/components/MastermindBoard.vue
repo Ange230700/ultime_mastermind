@@ -1,6 +1,9 @@
 <!-- src/components/MastermindBoard.vue -->
 <template>
-  <div class="mx-auto flex max-w-lg flex-col gap-6 rounded-lg p-4 shadow-lg">
+  <div
+    class="mx-auto flex max-w-lg flex-1 flex-col gap-6 rounded-lg p-4 shadow-lg"
+    style="background-color: var(--p-surface-700)"
+  >
     <!-- Message / Status -->
     <div class="mb-2 text-center font-semibold">
       <p v-if="!isCodeSet && !hasMadeFirstGuess">First, set the secret code.</p>
@@ -46,6 +49,7 @@
         class="p-button-sm"
         :disabled="hasMadeFirstGuess"
         @click="showModal = true"
+        style="font-size: 1rem"
       />
       <PrimeButton
         label="Submit Guess"
@@ -53,6 +57,7 @@
         class="p-button-sm"
         :disabled="!canSubmit || hasWon || hasLost"
         @click="handleSubmitGuess"
+        style="font-size: 1rem"
       />
       <PrimeButton
         label="Reset Game"
@@ -60,6 +65,7 @@
         class="p-button-sm p-button-warning"
         :disabled="!hasMadeFirstGuess"
         @click="handleResetGame"
+        style="font-size: 1rem"
       />
     </div>
 

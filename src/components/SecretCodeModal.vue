@@ -8,7 +8,14 @@
     class="w-96"
   >
     <div class="space-y-4">
-      <p>Pick {{ slotsCount }} colors (click to fill each slot):</p>
+      <PrimeMessage
+        severity="info"
+        icon="pi pi-info-circle"
+        size="large"
+        closable
+      >
+        Pick {{ slotsCount }} colors (click to fill each slot):
+      </PrimeMessage>
 
       <!-- Color palette inside modal -->
       <div class="flex flex-wrap gap-2">
@@ -34,7 +41,14 @@
         />
       </div>
 
-      <p class="text-center font-semibold text-red-600">{{ errorMessage }}</p>
+      <PrimeMessage
+        v-if="errorMessage"
+        severity="error"
+        icon="pi pi-times"
+        size="large"
+        closable
+        >{{ errorMessage }}</PrimeMessage
+      >
 
       <div class="mt-4 flex justify-center gap-4">
         <PrimeButton label="Confirm Code" @click="confirmSecretCode" />

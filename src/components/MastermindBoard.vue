@@ -6,11 +6,51 @@
   >
     <!-- Message / Status -->
     <div class="mb-2 text-center font-semibold">
-      <p v-if="!isCodeSet && !hasMadeFirstGuess">First, set the secret code.</p>
-      <p v-else-if="victoryMessage">{{ victoryMessage }}</p>
-      <p v-else-if="lossMessage">{{ lossMessage }}</p>
-      <p v-else-if="clueMessage">{{ clueMessage }}</p>
-      <p v-else class="italic">Select 4 colors and submit your guess.</p>
+      <PrimeMessage
+        v-if="!isCodeSet && !hasMadeFirstGuess"
+        severity="info"
+        icon="pi pi-info-circle"
+        size="large"
+        closable
+      >
+        First, set the secret code.
+      </PrimeMessage>
+      <PrimeMessage
+        v-else-if="victoryMessage"
+        severity="success"
+        icon="pi pi-check"
+        size="large"
+        closable
+      >
+        {{ victoryMessage }}
+      </PrimeMessage>
+      <PrimeMessage
+        v-else-if="lossMessage"
+        severity="error"
+        icon="pi pi-times"
+        size="large"
+        closable
+      >
+        {{ lossMessage }}
+      </PrimeMessage>
+      <PrimeMessage
+        v-else-if="clueMessage"
+        severity="warn"
+        icon="pi pi-info-circle"
+        size="large"
+        closable
+      >
+        {{ clueMessage }}
+      </PrimeMessage>
+      <PrimeMessage
+        v-else
+        severity="info"
+        icon="pi pi-info-circle"
+        size="large"
+        closable
+      >
+        Select 4 colors and submit your guess.
+      </PrimeMessage>
     </div>
 
     <!-- Color palette (for guessing) -->

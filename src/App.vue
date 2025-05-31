@@ -1,6 +1,6 @@
 <!-- src/App.vue -->
 <template>
-  <div class="flex min-h-screen flex-col items-center bg-gray-50 py-10">
+  <div class="flex min-h-screen flex-col items-center py-10">
     <HeaderFooter />
     <MastermindBoard />
   </div>

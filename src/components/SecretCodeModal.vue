@@ -30,7 +30,7 @@
         <GameSlot
           v-for="idx in slotsRemaining"
           :key="`empty-${idx}`"
-          fillColor="{null}"
+          :fillColor="null"
         />
       </div>
 

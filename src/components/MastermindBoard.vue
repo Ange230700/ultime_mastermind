@@ -1,17 +1,13 @@
 <!-- src/components/MastermindBoard.vue -->
 <template>
-  <div
-    class="mx-auto flex max-w-lg flex-col gap-6 rounded-lg bg-white p-4 shadow-lg"
-  >
+  <div class="mx-auto flex max-w-lg flex-col gap-6 rounded-lg p-4 shadow-lg">
     <!-- Message / Status -->
     <div class="mb-2 text-center font-semibold">
       <p v-if="!isCodeSet && !hasMadeFirstGuess">First, set the secret code.</p>
       <p v-else-if="victoryMessage">{{ victoryMessage }}</p>
       <p v-else-if="lossMessage">{{ lossMessage }}</p>
       <p v-else-if="clueMessage">{{ clueMessage }}</p>
-      <p v-else class="text-gray-600 italic">
-        Select 4 colors and submit your guess.
-      </p>
+      <p v-else class="italic">Select 4 colors and submit your guess.</p>
     </div>
 
     <!-- Color palette (for guessing) -->
@@ -69,10 +65,7 @@
 
     <!-- Clues area -->
     <transition name="fade">
-      <div
-        v-if="showClues"
-        class="mt-6 rounded-lg border border-gray-300 bg-gray-100 p-4"
-      >
+      <div v-if="showClues" class="mt-6 rounded-lg border p-4">
         <h3 class="mb-2 underline">Clues</h3>
         <p><strong>Well placed:</strong> {{ wellPlacedText }}</p>
         <p><strong>Misplaced:</strong> {{ misplacedText }}</p>

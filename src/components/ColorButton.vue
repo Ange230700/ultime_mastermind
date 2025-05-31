@@ -2,7 +2,7 @@
 <template>
   <PrimeButton
     :style="{ backgroundColor: color }"
-    class="h-12 w-12 rounded-full border-2 border-gray-900 transition-transform hover:scale-110"
+    class="h-12 w-12 rounded-full border-2 transition-transform hover:scale-110"
     :title="color"
     @click="onClick"
   />

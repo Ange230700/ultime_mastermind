@@ -1,7 +1,7 @@
 <!-- src/components/GameSlot.vue -->
 <template>
   <div
-    class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-gray-900 bg-gray-200"
+    class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2"
     :style="{ backgroundColor: fillColor ? fillColor : 'transparent' }"
     @click="onRemove"
   >

@@ -4,6 +4,8 @@ import { createApp } from "vue";
 import PrimeVue from "primevue/config";
 import Aura from "@primeuix/themes/aura";
 import App from "./App.vue";
+import Dialog from "primevue/dialog";
+import Button from "primevue/button";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -11,4 +13,6 @@ app.use(PrimeVue, {
     preset: Aura,
   },
 });
+app.component("PrimeButton", Button);
+app.component("PrimeDialog", Dialog);
 app.mount("#app");
